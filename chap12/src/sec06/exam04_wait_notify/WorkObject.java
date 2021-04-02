@@ -3,9 +3,9 @@ package sec06.exam04_wait_notify;
 public class WorkObject {
 	public synchronized void methodA() {
 		System.out.println("ThreadA의 methodA() 작업 실행");
-		notify();
+		notify(); // 다른 일시정지 Thread에게 RUNNABLE 상태 만든다.
 		try {
-			wait();
+			wait(); //자신Thread를 일지정지 상태로 만든다.
 		} catch (InterruptedException e) {
 		}
 	}
